@@ -6,13 +6,22 @@ async function Get(){
     try{
         const response = await fetch("https://fakestoreapi.com/products");
         const data = await response.json();
-        // console.log(data[0].image)
-    
+        console.log(data);
 
-        data.forEach((id)=>{
+
+        const numberOfElements = Object.keys(data).length;
+        console.log(numberOfElements)
+
+
+    //    const Data = Array.from(data)
+    //     console.log(Data)
+
 
             const home = document.querySelector('.hoho')
             home.style.backgroundColor = "black"
+
+                   
+            for(let n = 0;n<=numberOfElements;n++){
     
             const armor = document.querySelector('.major')
     
@@ -25,14 +34,14 @@ async function Get(){
             armor.appendChild(child)
     
             const Image = document.createElement('img')
-            Image.src = data[id].image;
+            Image.src = data[n].image;
             Image.style.height = "400px"
             Image.style.width = "100%"
     
             child.appendChild(Image)
     
             const content = document.createElement('h1')
-            content.innerText = data[item].title
+            content.innerText = data[n].title
             content.style.fontSize ="20px"
             content.style.marginLeft = "12px"
             
@@ -40,13 +49,13 @@ async function Get(){
     
             const price = document.createElement('h1')
     
-            price.innerHTML =data[item].price
+            price.innerHTML =data[n].price
             price.style.marginLeft ="12PX"
     
             child.appendChild(price)
 
-
-        })
+            }
+    
         // console.log(armor)
     
 
