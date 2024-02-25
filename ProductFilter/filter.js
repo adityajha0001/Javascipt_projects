@@ -19,11 +19,13 @@ async function Get(){
 
             const home = document.querySelector('.hoho')
             home.style.backgroundColor = "black"
-
-                   
-            for(let n = 0;n<=numberOfElements;n++){
-    
+            
             const armor = document.querySelector('.major')
+            armor.style.display = 'grid';
+            armor.style.gridTemplateColumns = 'repeat(5, 1fr)';
+            armor.style.gap = '10px';
+                   
+ for(let n = 0;n<=numberOfElements;n++){
     
             const child = document.createElement('div');
             child.style.backgroundColor = 'white'
@@ -54,7 +56,7 @@ async function Get(){
     
             child.appendChild(price)
 
-            }
+  }
     
         // console.log(armor)
     
